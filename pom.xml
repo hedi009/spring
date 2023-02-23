@@ -46,6 +46,12 @@
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-resources-plugin</artifactId>
+			<version>3.3.0</version>
+			<type>maven-plugin</type>
+		</dependency>
 	</dependencies>
 
 	<build>
