@@ -22,8 +22,8 @@ public class CategoriesServiceTest {
     public void shouldsavecategorywithsuccec() {
       Categorie expectedCategorie = Categorie.builder()
                 .id(1L)
-                .QT(78L)
-                .Nom("MM")
+                .qt(78L)
+                .nom("MM")
                 .build();
         Categorie categorieAjoue = categoriesService.ajout(expectedCategorie);
         Assertions.assertNotNull(categorieAjoue);
@@ -37,8 +37,8 @@ public class CategoriesServiceTest {
     public void shouldupdatecategorywithsuccec() {
         Categorie expectedCategorie = Categorie.builder()
                 .id(15L)
-                .QT(78L)
-                .Nom("test")
+                .qt(78L)
+                .nom("test")
                 .build();
         Categorie categorieAjoue = categoriesService.ajout(expectedCategorie);
         Categorie categorieToUpdate =categorieAjoue;
@@ -57,15 +57,15 @@ public class CategoriesServiceTest {
     public void shoulddeletecategorywithsuccec() {
         Categorie expectedCategorie = Categorie.builder()
                 .id(30L)
-                .QT(78L)
-                .Nom("MM")
+                .qt(78L)
+                .nom("MM")
                 .build();
         Categorie categorieAjoue = categoriesService.ajout(expectedCategorie);
 
 
         boolean isDeleted =categoriesService.delete(categorieAjoue.getId());
         Assertions.assertTrue(isDeleted);
-        Optional<Categorie> categorie=categoriesService.FindById(categorieAjoue.getId());
+        Optional<Categorie> categorie=categoriesService.findById(categorieAjoue.getId());
         assertFalse(categorie.isPresent());
 
 
