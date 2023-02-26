@@ -46,6 +46,13 @@ pipeline {
 
                                                                   }
 
+                            stage('Docker login') {
+
+                                                                             steps {
+                                                                               bat 'echo "login Docker ...."'
+                                                                               bat 'docker login -u hedibj -p AZErty123@'
+                                                                                          }  }
+
 
 
 
