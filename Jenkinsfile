@@ -45,6 +45,13 @@ pipeline {
                                                                     }
 
                                                                   }
+                                                                  stage('Build docker image'){
+                                                                                                          steps{
+                                                                                                                  script{
+                                                                                                                      bat 'docker build -t hedibj/Stage_EX1-1.0.0:latest .'
+                                                                                                                                      }
+                                                                                                                                    }
+                                                                                                                                }
 
                             stage('Docker login') {
 
@@ -52,6 +59,14 @@ pipeline {
                                                                                bat 'echo "login Docker ...."'
                                                                                bat 'docker login -u hedibj -p AZErty123@'
                                                                                           }  }
+
+
+                              stage('Docker push') {
+
+                                                                               steps {
+                                                                                   bat 'echo "Docker is pushing ...."'
+                                                                               	bat 'docker push hedibj/Stage_EX1-1.0.0'
+                                                                                            }  }
 
 
 
