@@ -35,6 +35,17 @@ pipeline {
                                                     }
                                                 }
 
+                                                 stage('SonarQube Analysis') {
+
+                                                                    steps{
+                                                                    bat 'mvn clean verify sonar:sonar \
+                                                                           -Dsonar.projectKey=p1 \
+                                                                           -Dsonar.host.url=http://localhost:9000 \
+                                                                           -Dsonar.login=sqp_418ea11ea269826d514212be85da931980ffc4bb'
+                                                                    }
+
+                                                                  }
+
 
 
 

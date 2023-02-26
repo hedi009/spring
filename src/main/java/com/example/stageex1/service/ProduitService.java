@@ -72,7 +72,7 @@ public class ProduitService {
         return produitRepository.findById(id);
     }
     public List<Produit> produitByCategorie(Long idCategorie) {
-        Categorie categorie = categorieRepository.findById(idCategorie).get();
+        Optional<Categorie> categorie = Optional.of(categorieRepository.findById(idCategorie).get());
         return produitRepository.findByCategorie(categorie);
     }
 

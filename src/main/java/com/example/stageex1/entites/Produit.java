@@ -36,8 +36,7 @@ public class Produit {
 
     @JsonBackReference
     Categorie categorie;
-    @Column(insertable=false, updatable=false)
-    private Long categorie_id;
+
 
 
 }
