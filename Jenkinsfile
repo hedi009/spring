@@ -48,7 +48,7 @@ pipeline {
                                                                   stage('Build docker image'){
                                                                                                           steps{
                                                                                                                   script{
-                                                                                                                      bat 'docker build -t hedibj/Stage_EX1-1.0.0:latest .'
+                                                                                                                      bat 'docker build -t hedibj/miniproj-1.0.0:latest .'
                                                                                                                                       }
                                                                                                                                     }
                                                                                                                                 }
@@ -65,7 +65,7 @@ pipeline {
 
                                                                                steps {
                                                                                    bat 'echo "Docker is pushing ...."'
-                                                                               	bat 'docker push hedibj/Stage_EX1-1.0.0'
+                                                                               	bat 'docker push hedibj/miniproj-1.0.0'
                                                                                             }  }
 
 
